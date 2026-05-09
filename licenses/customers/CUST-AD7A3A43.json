@@ -1,0 +1,21 @@
+{
+  "customerId": 2,
+  "customerCode": "CUST-AD7A3A43",
+  "activationCode": "ACT-A4D30F72FC19",
+  "plan": "pro",
+  "status": "active",
+  "expiresAt": "2026-06-09T00:00:00.000Z",
+  "license": {
+    "licenseKey": "LIC-40AF7C372A275FC9",
+    "messagesLimit": 800,
+    "messagesUsed": 0
+  },
+  "features": {
+    "SEND_TEXT": false,
+    "SEND_PDF": false,
+    "SEND_IMAGE": false,
+    "SEND_BULK": false,
+    "CHATBOT": false,
+    "REPORTS": false
+  }
+}

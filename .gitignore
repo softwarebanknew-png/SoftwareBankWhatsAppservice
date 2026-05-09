@@ -1,0 +1,5 @@
+node_modules/
+license-api/node_modules/
+.env
+license-api/.env
+reports/

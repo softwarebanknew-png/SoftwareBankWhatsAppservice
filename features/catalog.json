@@ -1,10 +1,120 @@
 {
   "features": [
-    { "code": "SEND_TEXT", "name": "Send Text Messages" },
-    { "code": "SEND_PDF", "name": "Send PDF Files" },
-    { "code": "SEND_IMAGE", "name": "Send Images" },
-    { "code": "SEND_BULK", "name": "Bulk Sending" },
-    { "code": "CHATBOT", "name": "Chatbot" },
-    { "code": "REPORTS", "name": "Reports" }
+    {
+      "code": "ADVANCED_SEARCH",
+      "name": "البحث المتقدم"
+    },
+    {
+      "code": "ADVANCED_SECURITY",
+      "name": "الأمان المتقدم"
+    },
+    {
+      "code": "BACKUP_RESTORE",
+      "name": "النسخ الاحتياطي والاستعادة"
+    },
+    {
+      "code": "BULK_EXCEL",
+      "name": "إرسال مجمع من Excel"
+    },
+    {
+      "code": "CHATBOT",
+      "name": "Chatbot"
+    },
+    {
+      "code": "CONTACTS_MANAGEMENT",
+      "name": "إدارة جهات الاتصال"
+    },
+    {
+      "code": "EXPORT_REPORTS",
+      "name": "تصدير التقارير"
+    },
+    {
+      "code": "FINANCIAL_REPORTING",
+      "name": "التقارير المالية"
+    },
+    {
+      "code": "MEDIA_MESSAGES",
+      "name": "إرسال الصور والوسائط"
+    },
+    {
+      "code": "MSG_HISTORY",
+      "name": "سجل الرسائل"
+    },
+    {
+      "code": "MSG_SCHEDULING",
+      "name": "جدولة الرسائل"
+    },
+    {
+      "code": "MSG_TEMPLATES",
+      "name": "قوالب الرسائل"
+    },
+    {
+      "code": "MULTI_LANGUAGE",
+      "name": "دعم متعدد اللغات"
+    },
+    {
+      "code": "MULTI_NOTIFICATIONS",
+      "name": "إشعارات إدارية متعددة"
+    },
+    {
+      "code": "NOTIFICATION_SETTINGS",
+      "name": "إعدادات الإشعارات"
+    },
+    {
+      "code": "PREMIUM_PDF_REPORTS",
+      "name": "تقارير PDF مميزة"
+    },
+    {
+      "code": "REPORTS",
+      "name": "Reports"
+    },
+    {
+      "code": "SEND_AUDIO",
+      "name": "إرسال الملفات الصوتية"
+    },
+    {
+      "code": "SEND_BULK",
+      "name": "Bulk Sending"
+    },
+    {
+      "code": "SEND_DOCUMENT",
+      "name": "إرسال المستندات"
+    },
+    {
+      "code": "SEND_IMAGE",
+      "name": "Send Images"
+    },
+    {
+      "code": "SEND_PDF",
+      "name": "Send PDF Files"
+    },
+    {
+      "code": "SEND_TEXT",
+      "name": "Send Text Messages"
+    },
+    {
+      "code": "SEND_VIDEO",
+      "name": "إرسال الفيديو"
+    },
+    {
+      "code": "SERVICE_MANAGEMENT",
+      "name": "إدارة الخدمات"
+    },
+    {
+      "code": "SMART_SENDING",
+      "name": "الإرسال الذكي"
+    },
+    {
+      "code": "UI_CUSTOMIZATION",
+      "name": "تخصيص الواجهة"
+    },
+    {
+      "code": "USAGE_STATISTICS",
+      "name": "إحصائيات الاستخدام"
+    },
+    {
+      "code": "VERIFICATION_CODES",
+      "name": "إرسال أكواد التحقق"
+    }
   ]
 }

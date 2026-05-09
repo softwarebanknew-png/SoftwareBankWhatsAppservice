@@ -1,0 +1,375 @@
+:root {
+    color-scheme: dark;
+    --bg-1: #071426;
+    --bg-2: #12243f;
+    --glass: rgba(11, 28, 49, 0.72);
+    --border: rgba(170, 219, 255, 0.2);
+    --text: #e7f3ff;
+    --muted: #99b7d6;
+    --cyan: #39d0ff;
+    --purple: #9d7eff;
+    --success: #2ecc71;
+    --warning: #f5b642;
+    --danger: #f16d7f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: radial-gradient(circle at top, #18345d 0, var(--bg-1) 45%, #040a12 100%);
+    color: var(--text);
+}
+
+.page-bg {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(57, 208, 255, 0.1), rgba(157, 126, 255, 0.14));
+    z-index: -1;
+}
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    margin: 0.75rem;
+    padding: 0.75rem 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.brand p {
+    margin: 0.15rem 0 0;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.container {
+    padding: 0.2rem 0.75rem 1.5rem;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.config-panel {
+    padding: 1rem;
+}
+
+.config-panel h2,
+.tab-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+}
+
+.grid-form {
+    display: grid;
+    gap: 0.65rem;
+}
+
+label {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(153, 183, 214, 0.5);
+    background: rgba(5, 14, 27, 0.7);
+    color: var(--text);
+    padding: 0.58rem 0.65rem;
+}
+
+.btn {
+    border: none;
+    border-radius: 11px;
+    padding: 0.58rem 0.8rem;
+    cursor: pointer;
+    color: #02101d;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--cyan), var(--purple));
+}
+
+.btn-warn {
+    background: var(--warning);
+}
+
+.btn-danger {
+    background: var(--danger);
+}
+
+.btn-success {
+    background: var(--success);
+}
+
+.btn-dark {
+    background: #203247;
+    color: #dceeff;
+    border: 1px solid rgba(170, 219, 255, 0.35);
+}
+
+.config-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.github-status {
+    margin-top: 0.2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(153, 183, 214, 0.4);
+    padding: 0.5rem 0.65rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.github-status.ok {
+    border-color: rgba(46, 204, 113, 0.7);
+    color: #aaf3c9;
+}
+
+.github-status.fail {
+    border-color: rgba(241, 109, 127, 0.7);
+    color: #ffd0d7;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+}
+
+.kpi-card {
+    padding: 0.75rem;
+    border-radius: 16px;
+    background: rgba(11, 31, 56, 0.68);
+    border: 1px solid rgba(57, 208, 255, 0.2);
+}
+
+.kpi-card p {
+    margin: 0.1rem 0 0;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.kpi-card strong {
+    font-size: 1.4rem;
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    padding: 0.5rem;
+}
+
+.tab {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: var(--text);
+    padding: 0.5rem 0.4rem;
+    background: rgba(5, 14, 27, 0.4);
+    cursor: pointer;
+}
+
+.tab.active {
+    border-color: rgba(57, 208, 255, 0.65);
+    background: rgba(57, 208, 255, 0.2);
+}
+
+.tab-content {
+    display: none;
+    padding: 0.9rem;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.list {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.row {
+    border: 1px solid rgba(153, 183, 214, 0.25);
+    border-radius: 12px;
+    padding: 0.7rem;
+    background: rgba(2, 11, 24, 0.48);
+    display: grid;
+    gap: 0.5rem;
+}
+
+.row-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+.chip {
+    border-radius: 999px;
+    padding: 0.16rem 0.58rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.chip.active {
+    background: rgba(46, 204, 113, 0.2);
+    color: #9cf2c2;
+}
+
+.chip.suspended {
+    background: rgba(241, 109, 127, 0.18);
+    color: #ffc2cd;
+}
+
+.chip.expired {
+    background: rgba(245, 182, 66, 0.2);
+    color: #ffd999;
+}
+
+.actions {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.mini {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.activity-item {
+    border-bottom: 1px solid rgba(153, 183, 214, 0.2);
+    padding: 0.5rem 0;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.toast-host {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    z-index: 20;
+}
+
+.toast {
+    border-radius: 10px;
+    padding: 0.56rem 0.65rem;
+    border: 1px solid rgba(170, 219, 255, 0.35);
+    background: rgba(4, 13, 24, 0.95);
+}
+
+.toast.error {
+    border-color: rgba(241, 109, 127, 0.65);
+}
+
+.drawer {
+    position: fixed;
+    inset: 0;
+    display: none;
+    z-index: 30;
+}
+
+.drawer.open {
+    display: block;
+}
+
+.drawer-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.drawer-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: min(460px, 96vw);
+    background: rgba(7, 20, 38, 0.98);
+    border-left: 1px solid rgba(170, 219, 255, 0.2);
+    box-shadow: -18px 0 28px rgba(0, 0, 0, 0.35);
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.drawer-head {
+    padding: 0.8rem;
+    border-bottom: 1px solid rgba(170, 219, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drawer-body {
+    padding: 0.8rem;
+    overflow-y: auto;
+}
+
+@media (min-width: 880px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .config-panel,
+    .kpi-grid,
+    .tabs,
+    .tab-content {
+        grid-column: 1 / -1;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .tabs {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}

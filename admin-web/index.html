@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoftwareBank Admin</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <div class="page-bg"></div>
+    <header class="topbar glass">
+        <div class="brand">
+            <img src="../assets/softwarebank-logo.jpg" alt="SoftwareBank" />
+            <div>
+                <strong>SoftwareBank</strong>
+                <p>WhatsApp Control Center</p>
+            </div>
+        </div>
+        <button id="refreshBtn" class="btn btn-primary">تحديث</button>
+    </header>
+
+    <main class="container">
+        <section class="glass config-panel">
+            <h2>اعدادات GitHub</h2>
+            <form id="configForm" class="grid-form">
+                <label>
+                    GitHub Owner
+                    <input id="ghOwner" required placeholder="softwarebanknew-png" />
+                </label>
+                <label>
+                    Repository Name
+                    <input id="ghRepo" required placeholder="SoftwareBankWhatsAppservice" />
+                </label>
+                <label>
+                    Branch
+                    <input id="ghBranch" required placeholder="main" />
+                </label>
+                <label>
+                    GitHub Token (repo scope)
+                    <input id="ghToken" type="password" required placeholder="github_pat_xxx" />
+                </label>
+                <div class="config-actions">
+                    <button class="btn btn-primary" type="submit">حفظ والاتصال بـ GitHub</button>
+                    <button id="testGithubBtn" class="btn btn-dark" type="button">Test GitHub Connection</button>
+                    <button id="validatePathsBtn" class="btn btn-dark" type="button">Validate Required Paths</button>
+                    <button id="autoFixPathsBtn" class="btn btn-dark" type="button">Auto-Fix Required Paths</button>
+                    <button id="createSampleCustomerBtn" class="btn btn-dark" type="button">Create First Sample Customer</button>
+                    <button id="copyActivationBtn" class="btn btn-dark" type="button">Copy Activation Data</button>
+                </div>
+                <div id="githubStatus" class="github-status">الحالة: غير متصل</div>
+            </form>
+        </section>
+
+        <section id="kpis" class="kpi-grid"></section>
+
+        <nav class="tabs glass">
+            <button class="tab active" data-tab="dashboard">Dashboard</button>
+            <button class="tab" data-tab="customers">Customers</button>
+            <button class="tab" data-tab="licenses">Licenses</button>
+            <button class="tab" data-tab="features">Features</button>
+            <button class="tab" data-tab="plans">Plans</button>
+            <button class="tab" data-tab="activity">Activity</button>
+        </nav>
+
+        <section id="dashboard" class="tab-content active glass"></section>
+        <section id="customers" class="tab-content glass"></section>
+        <section id="licenses" class="tab-content glass"></section>
+        <section id="features" class="tab-content glass"></section>
+        <section id="plans" class="tab-content glass"></section>
+        <section id="activity" class="tab-content glass"></section>
+    </main>
+
+    <div id="drawer" class="drawer">
+        <div id="drawerBackdrop" class="drawer-backdrop"></div>
+        <aside class="drawer-panel">
+            <header class="drawer-head">
+                <strong id="drawerTitle">Edit</strong>
+                <button id="drawerCloseBtn" class="btn btn-danger" type="button">Close</button>
+            </header>
+            <div id="drawerBody" class="drawer-body"></div>
+        </aside>
+    </div>
+
+    <div id="toastHost" class="toast-host"></div>
+    <script src="./app.js"></script>
+</body>
+</html>

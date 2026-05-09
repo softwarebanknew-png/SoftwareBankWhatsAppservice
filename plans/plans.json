@@ -3,12 +3,46 @@
     {
       "code": "basic",
       "messagesLimit": 5000,
-      "features": ["SEND_TEXT", "SEND_PDF", "REPORTS"]
+      "features": [
+        "SEND_TEXT",
+        "SEND_PDF",
+        "REPORTS"
+      ]
     },
     {
       "code": "pro",
       "messagesLimit": 25000,
-      "features": ["SEND_TEXT", "SEND_PDF", "SEND_IMAGE", "SEND_BULK", "CHATBOT", "REPORTS"]
+      "features": [
+        "ADVANCED_SEARCH",
+        "ADVANCED_SECURITY",
+        "BACKUP_RESTORE",
+        "BULK_EXCEL",
+        "CHATBOT",
+        "CONTACTS_MANAGEMENT",
+        "EXPORT_REPORTS",
+        "FINANCIAL_REPORTING",
+        "MEDIA_MESSAGES",
+        "MSG_HISTORY",
+        "MSG_SCHEDULING",
+        "MSG_TEMPLATES",
+        "MULTI_LANGUAGE",
+        "MULTI_NOTIFICATIONS",
+        "NOTIFICATION_SETTINGS",
+        "PREMIUM_PDF_REPORTS",
+        "REPORTS",
+        "SEND_AUDIO",
+        "SEND_BULK",
+        "SEND_DOCUMENT",
+        "SEND_IMAGE",
+        "SEND_PDF",
+        "SEND_TEXT",
+        "SEND_VIDEO",
+        "SERVICE_MANAGEMENT",
+        "SMART_SENDING",
+        "UI_CUSTOMIZATION",
+        "USAGE_STATISTICS",
+        "VERIFICATION_CODES"
+      ]
     }
   ]
 }

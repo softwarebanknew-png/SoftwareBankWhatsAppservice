@@ -1,0 +1,120 @@
+name: License Batch Report
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "licenses/**"
+      - "license-api/**"
+      - "scripts/license-batch-report.js"
+      - ".github/workflows/license-batch-report.yml"
+  schedule:
+    - cron: "0 */12 * * *"
+
+jobs:
+  batch-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: "license-api/package-lock.json"
+
+      - name: Install License API dependencies
+        working-directory: license-api
+        run: npm ci
+
+      - name: Run batch report script
+        env:
+          LICENSE_SIGNING_SECRET: ${{ secrets.LICENSE_SIGNING_SECRET }}
+        run: node scripts/license-batch-report.js
+
+      - name: Read report summary
+        if: always()
+        id: report_summary
+        run: |
+          python - <<'PY'
+          import json, pathlib, os
+          report_path = pathlib.Path("reports/license-batch-report.json")
+          if not report_path.exists():
+            with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+              f.write("report_exists=false\n")
+              f.write("failed=unknown\n")
+              f.write("total=unknown\n")
+              f.write("passed=unknown\n")
+            raise SystemExit(0)
+
+          data = json.loads(report_path.read_text(encoding="utf-8"))
+          summary = data.get("summary", {})
+          failed = summary.get("failed", 0)
+          total = summary.get("total", 0)
+          passed = summary.get("passed", 0)
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+            f.write("report_exists=true\n")
+            f.write(f"failed={failed}\n")
+            f.write(f"total={total}\n")
+            f.write(f"passed={passed}\n")
+          PY
+
+      - name: Send failure email notification
+        if: always() && steps.report_summary.outputs.failed != '0'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "License Batch Report FAILED - ${{ github.repository }}"
+          to: ${{ secrets.ALERT_EMAIL_TO }}
+          from: ${{ secrets.ALERT_EMAIL_FROM }}
+          content_type: text/html
+          body: |
+            <h2>License Batch Report Alert</h2>
+            <p><b>Repository:</b> ${{ github.repository }}</p>
+            <p><b>Workflow:</b> ${{ github.workflow }}</p>
+            <p><b>Run ID:</b> ${{ github.run_id }}</p>
+            <p><b>Branch:</b> ${{ github.ref_name }}</p>
+            <p><b>Total:</b> ${{ steps.report_summary.outputs.total }}</p>
+            <p><b>Passed:</b> ${{ steps.report_summary.outputs.passed }}</p>
+            <p><b>Failed:</b> ${{ steps.report_summary.outputs.failed }}</p>
+            <p>Check workflow run details and download the artifact <b>license-batch-report</b>.</p>
+            <p>Run URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}</p>
+
+      - name: Send success email notification
+        if: always() && steps.report_summary.outputs.failed == '0'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT }}
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "License Batch Report SUCCESS - ${{ github.repository }}"
+          to: ${{ secrets.ALERT_EMAIL_TO }}
+          from: ${{ secrets.ALERT_EMAIL_FROM }}
+          content_type: text/html
+          body: |
+            <h2>License Batch Report Success</h2>
+            <p><b>Repository:</b> ${{ github.repository }}</p>
+            <p><b>Workflow:</b> ${{ github.workflow }}</p>
+            <p><b>Run ID:</b> ${{ github.run_id }}</p>
+            <p><b>Branch:</b> ${{ github.ref_name }}</p>
+            <p><b>Total:</b> ${{ steps.report_summary.outputs.total }}</p>
+            <p><b>Passed:</b> ${{ steps.report_summary.outputs.passed }}</p>
+            <p><b>Failed:</b> ${{ steps.report_summary.outputs.failed }}</p>
+            <p>All customer checks are passing.</p>
+            <p>Run URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}</p>
+
+      - name: Upload reports artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: license-batch-report
+          path: reports/
+          if-no-files-found: error

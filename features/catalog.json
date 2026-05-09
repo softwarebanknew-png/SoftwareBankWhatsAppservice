@@ -1,0 +1,10 @@
+{
+  "features": [
+    { "code": "SEND_TEXT", "name": "Send Text Messages" },
+    { "code": "SEND_PDF", "name": "Send PDF Files" },
+    { "code": "SEND_IMAGE", "name": "Send Images" },
+    { "code": "SEND_BULK", "name": "Bulk Sending" },
+    { "code": "CHATBOT", "name": "Chatbot" },
+    { "code": "REPORTS", "name": "Reports" }
+  ]
+}

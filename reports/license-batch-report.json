@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-05-09T05:53:54.573Z",
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  },
+  "results": [
+    {
+      "customerCode": "SB-CLIENT-001",
+      "status": "active",
+      "plan": "pro",
+      "activate": {
+        "status": 200,
+        "success": true
+      },
+      "validate": {
+        "status": 200,
+        "success": true
+      },
+      "info": {
+        "status": 200,
+        "success": true
+      },
+      "passed": true,
+      "reason": ""
+    }
+  ]
+}

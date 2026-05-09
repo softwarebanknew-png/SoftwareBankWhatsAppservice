@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-05-09T00:00:00.000Z",
+  "source": "github",
+  "notes": "Central control file for WhatsApp client licenses and features.",
+  "paths": {
+    "customers": "licenses/customers",
+    "plans": "plans/plans.json",
+    "features": "features/catalog.json"
+  }
+}

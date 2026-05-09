@@ -1,0 +1,14 @@
+{
+  "plans": [
+    {
+      "code": "basic",
+      "messagesLimit": 5000,
+      "features": ["SEND_TEXT", "SEND_PDF", "REPORTS"]
+    },
+    {
+      "code": "pro",
+      "messagesLimit": 25000,
+      "features": ["SEND_TEXT", "SEND_PDF", "SEND_IMAGE", "SEND_BULK", "CHATBOT", "REPORTS"]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "customerId": 1,
+  "customerCode": "SB-CLIENT-001",
+  "activationCode": "ACT-001-2026",
+  "plan": "pro",
+  "status": "active",
+  "expiresAt": "2027-05-09T00:00:00.000Z",
+  "license": {
+    "licenseKey": "LIC-SB-CLIENT-001",
+    "messagesLimit": 25000,
+    "messagesUsed": 0
+  },
+  "features": {
+    "SEND_TEXT": true,
+    "SEND_PDF": true,
+    "SEND_IMAGE": true,
+    "SEND_BULK": true,
+    "CHATBOT": true,
+    "REPORTS": true
+  }
+}

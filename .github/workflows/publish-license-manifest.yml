@@ -1,0 +1,43 @@
+name: Validate and Publish License Manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "licenses/**"
+      - "plans/**"
+      - "features/**"
+      - "manifest/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JSON files
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          root = pathlib.Path(".")
+          for pattern in ["licenses/**/*.json", "plans/**/*.json", "features/**/*.json", "manifest/**/*.json"]:
+            for file in root.glob(pattern):
+              try:
+                json.loads(file.read_text(encoding="utf-8"))
+                print("OK", file)
+              except Exception as exc:
+                print("INVALID", file, exc)
+                sys.exit(1)
+          PY
+
+      - name: Build manifest timestamp
+        run: |
+          python - <<'PY'
+          import json, datetime, pathlib
+          path = pathlib.Path("manifest/github-control.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          data["updatedAt"] = datetime.datetime.utcnow().replace(microsecond=0).isoformat() + "Z"
+          path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+          print("Updated manifest timestamp.")
+          PY

@@ -1,0 +1,21 @@
+{
+  "customerId": 2,
+  "customerCode": "SB-FIRST-001",
+  "activationCode": "ACT-SB-FIRST-001-2026",
+  "plan": "pro",
+  "status": "active",
+  "expiresAt": "2027-05-09T10:24:48.595Z",
+  "license": {
+    "licenseKey": "LIC-SB-FIRST-001",
+    "messagesLimit": 25000,
+    "messagesUsed": 0
+  },
+  "features": {
+    "SEND_TEXT": true,
+    "SEND_PDF": true,
+    "SEND_IMAGE": true,
+    "SEND_BULK": true,
+    "CHATBOT": true,
+    "REPORTS": true
+  }
+}

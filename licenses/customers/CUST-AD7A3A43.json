@@ -17,6 +17,7 @@
     "SEND_BULK": false,
     "CHATBOT": false,
     "REPORTS": false,
-    "ADVANCED_SEARCH": true
+    "ADVANCED_SEARCH": true,
+    "SEND_DOCUMENT": true
   }
 }

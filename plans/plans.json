@@ -43,6 +43,18 @@
         "USAGE_STATISTICS",
         "VERIFICATION_CODES"
       ]
+    },
+    {
+      "code": "with-management",
+      "messagesLimit": 20000,
+      "features": [
+        "ADVANCED_SECURITY",
+        "CONTACTS_MANAGEMENT",
+        "MSG_HISTORY",
+        "SEND_PDF",
+        "SEND_TEXT",
+        "SMART_SENDING"
+      ]
     }
   ]
 }

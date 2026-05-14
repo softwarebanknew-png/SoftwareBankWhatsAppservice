@@ -12,7 +12,7 @@
   },
   "features": {
     "ADVANCED_SEARCH": false,
-    "ADVANCED_SECURITY": false,
+    "ADVANCED_SECURITY": true,
     "BACKUP_RESTORE": false,
     "BULK_EXCEL": false,
     "CHATBOT": false,

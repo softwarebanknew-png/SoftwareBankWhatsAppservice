@@ -55,6 +55,19 @@
         "SEND_TEXT",
         "SMART_SENDING"
       ]
+    },
+    {
+      "code": "demo",
+      "messagesLimit": 100,
+      "features": [
+        "ADVANCED_SECURITY",
+        "CONTACTS_MANAGEMENT",
+        "MSG_HISTORY",
+        "SEND_PDF",
+        "SEND_TEXT",
+        "SMART_SENDING",
+        "USAGE_STATISTICS"
+      ]
     }
   ]
 }

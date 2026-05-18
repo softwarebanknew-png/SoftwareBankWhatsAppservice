@@ -3,11 +3,11 @@
   "customerCode": "CUST-AD7ZAHABIH",
   "activationCode": "ACT-SB-FIRST-005-2026",
   "plan": "demo",
-  "status": "active",
+  "status": "expired",
   "expiresAt": "2026-05-17T00:00:00.000Z",
   "license": {
     "licenseKey": "LIC-40AF7C372ZAHABIH",
-    "messagesLimit": 200,
+    "messagesLimit": 0,
     "messagesUsed": 0
   },
   "features": {

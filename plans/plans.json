@@ -68,6 +68,30 @@
         "SMART_SENDING",
         "USAGE_STATISTICS"
       ]
+    },
+    {
+      "code": "year",
+      "messagesLimit": 1000000,
+      "features": [
+        "ADVANCED_SEARCH",
+        "ADVANCED_SECURITY",
+        "BACKUP_RESTORE",
+        "BULK_EXCEL",
+        "CONTACTS_MANAGEMENT",
+        "EXPORT_REPORTS",
+        "FINANCIAL_REPORTING",
+        "MSG_HISTORY",
+        "MSG_SCHEDULING",
+        "PREMIUM_PDF_REPORTS",
+        "REPORTS",
+        "SEND_BULK",
+        "SEND_PDF",
+        "SEND_TEXT",
+        "SERVICE_MANAGEMENT",
+        "SMART_SENDING",
+        "UI_CUSTOMIZATION",
+        "USAGE_STATISTICS"
+      ]
     }
   ]
 }

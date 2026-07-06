@@ -19,7 +19,7 @@
     "CONTACTS_MANAGEMENT": false,
     "EXPORT_REPORTS": true,
     "FINANCIAL_REPORTING": true,
-    "MEDIA_MESSAGES": false,
+    "MEDIA_MESSAGES": true,
     "MSG_HISTORY": true,
     "MSG_SCHEDULING": true,
     "MSG_TEMPLATES": true,

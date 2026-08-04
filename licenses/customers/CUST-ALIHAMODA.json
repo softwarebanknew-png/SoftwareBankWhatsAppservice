@@ -3,7 +3,7 @@
   "customerCode": "CUST-ALIHAMODA",
   "activationCode": "ACT-ALIHAMODA",
   "plan": "year",
-  "status": "active",
+  "status": "suspended",
   "expiresAt": "2027-06-30T00:00:00.000Z",
   "license": {
     "licenseKey": "LIC-ALIHAMODA123",
@@ -40,5 +40,7 @@
     "UI_CUSTOMIZATION": true,
     "USAGE_STATISTICS": true,
     "VERIFICATION_CODES": true
-  }
+  },
+  "licenseKey": "LIC-ALIHAMODA123",
+  "messagesLimit": 1000000
 }

@@ -33,7 +33,7 @@
     "SEND_DOCUMENT": false,
     "SEND_IMAGE": false,
     "SEND_PDF": true,
-    "SEND_TEXT": true,
+    "SEND_TEXT": false,
     "SEND_VIDEO": false,
     "SERVICE_MANAGEMENT": false,
     "SMART_SENDING": true,

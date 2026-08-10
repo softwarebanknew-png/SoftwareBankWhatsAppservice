@@ -32,7 +32,7 @@
     "SEND_BULK": true,
     "SEND_DOCUMENT": true,
     "SEND_IMAGE": true,
-    "SEND_PDF": true,
+    "SEND_PDF": false,
     "SEND_TEXT": true,
     "SEND_VIDEO": true,
     "SERVICE_MANAGEMENT": true,
